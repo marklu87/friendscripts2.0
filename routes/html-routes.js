@@ -5,7 +5,7 @@
 // Dependencies
 // =============================================================
 var path = require("path");
-
+app.use(express.static(__dirname + '/'));
 // Routes
 // =============================================================
 module.exports = function(app) {
