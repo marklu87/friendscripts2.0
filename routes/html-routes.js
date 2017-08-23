@@ -5,7 +5,7 @@
 // Dependencies
 // =============================================================
 var path = require("path");
-app.use(express.static(__dirname + '/'));
+// app.use(express.static(__dirname + '/'));
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -17,19 +17,24 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 
-  // cms route loads cms.html
+  // newStory route loads create.html
+  app.get("/newStory", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/create.html"));
+  });
+
+  // read route loads read.html
   app.get("/read", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/read.html"));
   });
 
-  // blog route loads blog.html
+  // join route loads join.html
   app.get("/join", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/join.html"));
   });
 
   // authors route loads author-manager.html
-  app.get("/create", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/create.html"));
-  });
+  // app.get("/create", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/create.html"));
+  // });
 
 };
