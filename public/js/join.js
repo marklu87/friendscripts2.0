@@ -5,18 +5,20 @@ $.get("/api/stories", function(data) {
       storyDiv.attr("id", "storyID-" + data[i].id)
       $(".title").append(storyDiv);
 
-      $("#storyID-" + data[i].id).append("<h4>" + "Title: " + data[i].storyTitle + "</h4>");
-      $("#storyID-" + data[i].id).append("<h4>" + data[i].authorID + "</h4>");
-      $("#storyID-" + data[i].id).append("<h4>" + data[i].sentence + "</h4>");
-
-      console.log("before click: ");
-      var id = data[i].id;
-      $("#storyID-"+data[i].id).click(function(idElement) {
-        window.location.href = "http://localhost:8080/edit/" + id;
+      $("#storyID-" + data[i].id).append("Title: " + data[i].storyTitle + "</br>");
+      $("#storyID-" + data[i].id).append("Author: " + data[i].authorID + "</br>");
+      $("#storyID-" + data[i].id).append("Story Preview: " + data[i].sentence);
+      //
+      // console.log("before click: ");
+      // var id = data[i].id;
+      // console.log("id's: "+id);
+      console.log(data[i].id);
+      $("#storyID-"+data[i].id).bind('click', {id: data[i].id}, (function(event) {
+        window.location.href = "http://localhost:8080/edit/" + event.target.id;
         // $.get("/edit/" + id, function(data){
         //   console.log(data);
         // })
-      })
+      }));
     }
 
 
