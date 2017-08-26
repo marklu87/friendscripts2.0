@@ -28,7 +28,7 @@ $(".commitNewSentence").click(function(){
   var newPost = {
   sentence: $("#editStoryCommit").val("").trim(),
   authorID: $(".commitNewSentence").attr("authorID"),
-  storyID: $(".commitNewSentence").attr("storyID")
+  storyID: req.p
   };
   $.post("/api/sentences", newPost, function() {
     // window.location.href = "/read";

@@ -32,11 +32,9 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/join.html"));
   });
 
-<<<<<<< HEAD
+
 app.get("/edit/:storyID", function(req, res) {
-=======
-  app.get("/edit/:storyID", function(req, res) {
->>>>>>> cf6969f91bdabfbe224dfa96ef4ed0419d9634a6
+
     res.sendFile(path.join(__dirname, "../public/edit.html"));
   });
 
