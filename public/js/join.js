@@ -1,5 +1,6 @@
 $.get("/api/stories", function(data) {
-  // console.log("stories... " + data[0].storyTitle);
+  // console.log("story id: " + data[2].id);
+    var id = data.id;
     var stories = [];
     for (var i = 0; i < data.length; i++){
       stories.push("Title: " + data[i].storyTitle + "</br>" + "Author: " + data[i].authorID + "</br>" + "Story Preview: " + data[i].sentence);
