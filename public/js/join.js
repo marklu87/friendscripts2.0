@@ -1,18 +1,35 @@
 $.get("/api/stories", function(data) {
-  // console.log("story id: " + data[2].id);
-    var id = data.id;
-    var stories = [];
-    for (var i = 0; i < data.length; i++){
-      stories.push("Title: " + data[i].storyTitle + "</br>" + "Author: " + data[i].authorID + "</br>" + "Story Preview: " + data[i].sentence);
-      // console.log("stories..." + data[i].storyTitle);
-      // console.log("stories..." + data[i].authorID);
-      // console.log("stories..." + data[i].sentence);
-      // $(".title").append("Title: " + data[j].storyTitle + "</br>" + "Author: " + data[j].authorID + "</br>" + "Story Preview: " + data[j].sentence).addClass("newStoryDiv");
+    for (var i = 0; i < data.length; i++) {
+      var storyDiv = $("<div>");
+      storyDiv.addClass("newStoryDiv");
+      storyDiv.attr("id", "storyID-" + data[i].id)
+      $(".title").append(storyDiv);
+
+      $("#storyID-" + data[i].id).append("<h4>" + "Title: " + data[i].storyTitle + "</h4>");
+      $("#storyID-" + data[i].id).append("<h4>" + data[i].authorID + "</h4>");
+      $("#storyID-" + data[i].id).append("<h4>" + data[i].sentence + "</h4>");
+
+      console.log("before click: ");
+      var id = data[i].id;
+      $("#storyID-"+data[i].id).click(function(idElement) {
+        window.location.href = "http://localhost:8080/edit/" + id;
+        // $.get("/edit/" + id, function(data){
+        //   console.log(data);
+        // })
+      })
     }
 
-    console.log(stories);
 
-    for (var i = 0; i < stories.length; i++){
-        $(".title").append("<div class='newStoryDiv'>" + stories[i] + "</div>");
-    }
+    // var stories = [];
+    // for (var i = 0; i < data.length; i++){
+    //   stories.push("Title: " + data[i].storyTitle + "</br>" + "Author: " + data[i].authorID + "</br>" + "Story Preview: " + data[i].sentence);
+    // }
+    //
+    // console.log(stories);
+    //
+    // for (var i = 0; i < stories.length; i++){
+    //     var id = data[i].id;
+    //     console.log("id" + id);
+    //     $(".title").append("<div class='newStoryDiv'>" + stories[i] + "</div>").attr("id", id);
+    // }
 });
