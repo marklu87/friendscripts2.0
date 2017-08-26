@@ -280,12 +280,13 @@ body {
 }
 
 .newStoryDiv {
+  float: left;
   display: flex;
   justify-content: space-between;
   background-color: #f7f7f7;
   font-size: 20px;
   color: grey;
-  margin: 29px 4px 7px 4px;
+  margin: 29px 10px 7px 4px;
   width: 200px;
   height: 200px;
   text-align: left;
