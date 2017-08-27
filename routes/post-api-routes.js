@@ -23,6 +23,17 @@ module.exports = function(app) {
     });
   });
 
+app.get("/api/sentences", function(req, res) {
+    // var query = {};
+    // if (req.query.author_id) {
+    //   query.AuthorId = req.query.author_id;
+    // }
+    db.newStory.findOne({storyID: req.body.storyID}).then(function(result) {
+      res.json(result);
+    });
+  });
+
+
   // Get rotue for retrieving a single post
   // app.get("/api/posts/:id", function(req, res) {
   //   db.Post.findOne({
@@ -49,6 +60,20 @@ module.exports = function(app) {
     });
   });
 
+
+  app.post("/api/sentences", function(req, res) {
+    // console.log(req.body.storyTitle);
+    // console.log(req.body.authorID);
+    // console.log(req.body.sentence);
+    db.newSentence.create({
+      Sentence: req.body.sentence,
+      storyID: req.body.storyID,
+      authorID: 1
+
+    }).then(function(result) {
+      res.json(result);
+    });
+  });
   // DELETE route for deleting posts
   // app.delete("/api/posts/:id", function(req, res) {
   //   db.Post.destroy({

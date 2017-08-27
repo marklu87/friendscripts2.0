@@ -1,3 +1,5 @@
+ $(document).ready(function () {
+
  var config = {
    apiKey: "AIzaSyB3tLpkNwJljywfHXOfJiiLmKuyHyKoS50",
    authDomain: "friendscripts.firebaseapp.com",
@@ -22,13 +24,15 @@
    var randomWordLength = "";
    var maxCharCount = 150;
    var id;
+   var trimStoryID = window.location.pathname.toString();
+   trimStoryID = trimStoryID.substr(trimStoryID.indexOf("-") + 1)
+   console.log(trimStoryID);
 
 //Click Function to Post new sentence
 $(".commitNewSentence").click(function(){
   var newPost = {
-  sentence: $("#editStoryCommit").val("").trim(),
-  authorID: $(".commitNewSentence").attr("authorID"),
-  storyID: req.p
+  sentence: $("#editStoryCommit").val().trim(),
+  storyID: trimStoryID 
   };
   $.post("/api/sentences", newPost, function() {
     // window.location.href = "/read";
@@ -88,3 +92,5 @@ $("#editStoryCommit").keyup(function() {
         $(".charCount").text("Characters Remaining: " + charRemain);
     }
   })
+  
+});
