@@ -1,18 +1,6 @@
  $(document).ready(function() {
 
- // Initialize Firebase
- var config = {
-   apiKey: "AIzaSyB3tLpkNwJljywfHXOfJiiLmKuyHyKoS50",
-   authDomain: "friendscripts.firebaseapp.com",
-   databaseURL: "https://friendscripts.firebaseio.com",
-   projectId: "friendscripts",
-   storageBucket: "friendscripts.appspot.com",
-   messagingSenderId: "834536402255"
- };
- firebase.initializeApp(config);
-
-   // Initial Values
-  //  var dataRef = firebase.database();
+  // Initial Values
    var name = "";
    var email = "";
    var age = 0;
@@ -57,7 +45,6 @@ $(".lexicalNew").click(function(){
      $.ajax({
        type: "GET",
        url: queryURL,
-       data: config,
        success: function(data) {console.log(data);},
        error: function(response) {console.log(response);}
      })
@@ -80,7 +67,6 @@ $(".lexicalNew").click(function(){
        $.ajax({
          type: "GET",
          url: "https://api.wordnik.com/v4/word.json/"+randomWord+"/definitions?limit=200&includeRelated=true&useCanonical=false&includeTags=false&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5",
-         data: config,
          success: function(data) {console.log(data[0].text);}
        })
        .done(function(data) {
