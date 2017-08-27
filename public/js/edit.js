@@ -11,6 +11,9 @@ $(document).ready(function() {
   var randomWordLength = "";
   var maxCharCount = 150;
   var id;
+  var trimStoryID = window.location.pathname.toString();
+  trimStoryID = trimStoryID.substr(trimStoryID.indexOf("-") + 1)
+  console.log(trimStoryID);
 
 //Lexical Buttons for Story
 $(".lexicalEdit").click(function(){
@@ -65,7 +68,7 @@ $("#editStoryCommit").keyup(function() {
 
 // Text to speech API
   $(".speakStoryButt").click(function(event){
-      responsiveVoice.speak($("#editStoryCommit").val(), "UK English Female", {pitch: 1, rate: 0.8});
+      responsiveVoice.speak($("#editStoryCommit").val(), "Australian Female", {pitch: 1, rate: 0.3});
   });
   $(".pauseStoryButt").click(function(event){
       responsiveVoice.pause();
