@@ -88,4 +88,3 @@ $("#newStoryText").keyup(function() {
  })
 
 });
-

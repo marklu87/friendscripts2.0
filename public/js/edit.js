@@ -88,6 +88,4 @@ $(".commitNewSentence").click(function(){
       });
 });
 
-
-  
 });
