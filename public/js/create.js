@@ -1,3 +1,5 @@
+ $(document).ready(function() {
+
  // Initialize Firebase
  var config = {
    apiKey: "AIzaSyB3tLpkNwJljywfHXOfJiiLmKuyHyKoS50",
@@ -97,3 +99,5 @@ $("#newStoryText").keyup(function() {
        $(".charCount").text("Characters Remaining: " + charRemain);
    }
  })
+
+})
