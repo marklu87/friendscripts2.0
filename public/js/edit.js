@@ -75,8 +75,19 @@ $("#editStoryCommit").keyup(function() {
   });
 
 
-// $.get("/api/stories", function(data) {
-//       $(".prompt-lib").append(data);
-//     });
+//Click Function to Post new sentence
+$(".commitNewSentence").click(function(){
+  var newPost = {
+  sentence: $("#editStoryCommit").val().trim(),
+  storyID: trimStoryID
+  };
+  $.post("/api/sentences", newPost, function() {
+    // window.location.href = "/read";
+    }).done(function(data){
+        console.log(data);
+      });
+});
 
+
+  
 });
