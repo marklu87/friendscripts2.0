@@ -1,3 +1,4 @@
+
  $(document).ready(function() {
 
   // Initial Values
@@ -86,4 +87,4 @@ $("#newStoryText").keyup(function() {
    }
  })
 
-})
+});

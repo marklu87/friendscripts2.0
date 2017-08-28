@@ -6,6 +6,9 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var cookieParser = require("cookie-parser");
+var session = require('express-session');
+// var auth = require('./public/js/login.js')
 
 // Sets up the Express App
 // =============================================================
@@ -24,6 +27,14 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Static directory
 app.use(express.static("public"));
 
+
+//auth Sessions
+  // app.use(cookieParser());
+  // app.use(session({secret: 'friendscripts',resave: true, saveUninitialized: true}));
+  // app.use(auth.initialize());
+  // app.use(auth.session());
+  
+  
 // Routes
 // =============================================================
 require("./routes/post-api-routes.js")(app);
