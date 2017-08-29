@@ -40,6 +40,7 @@ module.exports = function(app) {
   app.get("/join", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/join.html"));
   });
+  
 
 
 app.get("/edit/:storyID", function(req, res) {
