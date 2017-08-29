@@ -1,7 +1,6 @@
 
  $(document).ready(function() {
 
-   alert("working");
 
   // Initial Values
    var name = "";
@@ -21,8 +20,8 @@
 $(".commitNewStory").click(function(){
 
   var newPost = {
-    storyTitle: $(".userTitle").val().trim(),
-    authorID: $(".userAuthor").val().trim(),
+    // storyTitle: $(".userTitle").val().trim(),
+    // authorID: $(".userAuthor").val().trim(),
     sentence: $("#newStoryText").val().trim()
   };
 
@@ -111,4 +110,3 @@ $.get("/api/stories", function(data) {
       }));
     }
 });
-

@@ -18,10 +18,14 @@ module.exports = function(sequelize, DataTypes) {
 	      // len: [1]
 	  }
   });
-  // Author.associate = function(models) {
-  // 	Author.hasMany(models.Post, {
-  // 		onDelete: "cascade"
-  // 	});
-  // };
+
+  newSentence.associate = function(models) {
+  	newSentence.belongsTo(models.newStory, {
+      foreignKey: {
+        allowNull: true
+      }
+  	});
+  };
+
   return newSentence;
 };

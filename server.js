@@ -33,8 +33,8 @@ app.use(express.static("public"));
   // app.use(session({secret: 'friendscripts',resave: true, saveUninitialized: true}));
   // app.use(auth.initialize());
   // app.use(auth.session());
-  
-  
+
+
 // Routes
 // =============================================================
 require("./routes/post-api-routes.js")(app);
@@ -43,7 +43,7 @@ require("./routes/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({}).then(function() {
+db.sequelize.sync({force: true}).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });

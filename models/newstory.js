@@ -2,14 +2,14 @@ module.exports = function(sequelize, DataTypes) {
   var newStory = sequelize.define("newStory", {
     storyTitle: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       // validate: {
       //   len: [1]
       // }
     },
     authorID: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       // len: [1]
     },
     sentence: {
@@ -18,10 +18,12 @@ module.exports = function(sequelize, DataTypes) {
       // len: [1]
     }
   });
-  // Author.associate = function(models) {
-  // 	Author.hasMany(models.Post, {
-  // 		onDelete: "cascade"
-  // 	});
-  // };
+
+  newStory.associate = function(models) {
+  	newStory.hasMany(models.newSentence, {
+  		// onDelete: "cascade"
+  	});
+  };
+
   return newStory;
 };

@@ -203,6 +203,10 @@ header {
   float: none;
   margin: 20px;
 }
+textarea {
+  resize: none;
+  height: 50vh;
+}
 
 #navbar-primary .navbar-nav a {
   padding-left: 30px;
@@ -237,7 +241,7 @@ header {
   margin-top: 5%;
   margin-bottom: 9%;
   margin-left: 19%;
-  
+
 }
 
 img.img-circle {
