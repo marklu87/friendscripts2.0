@@ -5,6 +5,7 @@ module.exports = function(sequelize, DataTypes) {
 	      allowNull: false
 	    }
   });
+
    newSentence.associate = function(models) {
     newSentence.belongsTo(models.stories, {
       foreignKey: {

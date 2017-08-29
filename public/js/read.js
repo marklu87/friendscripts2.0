@@ -10,7 +10,7 @@ $.get("/api/stories", function(data) {
       $("#storyID-" + data[i].id).append("<strong>Story Preview:</strong> "  + data[i].sentence);
 
       $("#storyID-" + data[i].id).bind('click', {id: data[i].id}, (function(event) {
-        window.location.href = "http://localhost:8080/edit/" + event.target.id;
+        window.location.href = "http://localhost:8080/read/" + event.target.id;
       }));
     }
 });
