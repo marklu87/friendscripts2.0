@@ -52,8 +52,8 @@ app.get("/api/sentences", function(req, res) {
     // console.log(req.body.authorID);
     // console.log(req.body.sentence);
     db.newStory.create({
-      storyTitle: req.body.storyTitle,
-      authorID: req.body.authorID,
+      // storyTitle: req.body.storyTitle,
+      // authorID: req.body.authorID,
       sentence: req.body.sentence
     }).then(function(result) {
       res.json(result);
@@ -66,8 +66,8 @@ app.get("/api/sentences", function(req, res) {
     // console.log(req.body.authorID);
     // console.log(req.body.sentence);
     db.newSentence.create({
-      Sentence: req.body.sentence,
-      storyID: req.body.storyID,
+      // Sentence: req.body.sentence,
+      // storyID: req.body.storyID,
       authorID: 1
 
     }).then(function(result) {

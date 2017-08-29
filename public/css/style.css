@@ -2,6 +2,10 @@
   margin-top: 10px;
 }
 
+textarea {
+  height: 50vh;
+}
+
 hr {
   display: block;
   height: 1px;
@@ -202,6 +206,7 @@ header {
   display: inline-block;
   float: none;
   margin: 20px;
+
 }
 
 #navbar-primary .navbar-nav a {
@@ -237,7 +242,7 @@ header {
   margin-top: 5%;
   margin-bottom: 9%;
   margin-left: 19%;
-  
+
 }
 
 img.img-circle {
@@ -439,4 +444,33 @@ img.img-circle {
 .media-carousel img {
   width: 250px;
   height: 100px
+}
+
+.newStoryDiv {
+  background-color: #f0f0f0;
+  height: 300px;
+  border-bottom: 2px solid grey;
+  margin-top: 50px;
+  padding-bottom: 25px;
+}
+
+.newStoryDiv h3 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.newStoryDiv h4 {
+}
+
+.newStoryDiv p {
+  text-align: center;
+  height: 100px;
+}
+
+.storyStyle {
+  text-decoration-color: white;
+}
+
+.btn {
+  color: white;
 }
