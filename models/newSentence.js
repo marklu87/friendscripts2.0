@@ -1,31 +1,25 @@
 module.exports = function(sequelize, DataTypes) {
-  var newSentence = sequelize.define("newSentence", {
-	    Sentence: {
+  var newSentence = sequelize.define("sentences", {
+	    sentence: {
 	      type: DataTypes.STRING,
 	      allowNull: false
-	      // validate: {
-	      //   len: [1]
-	      // }
-	    },
-	    storyID: {
-	      type: DataTypes.INTEGER,
-	      allowNull: false
-	      // len: [1]
-	    },
-	    authorID: {
-	      type: DataTypes.INTEGER,
-	      allowNull: false
-	      // len: [1]
-	  }
+	    }
   });
 
-  newSentence.associate = function(models) {
-  	newSentence.belongsTo(models.newStory, {
+   newSentence.associate = function(models) {
+    newSentence.belongsTo(models.stories, {
       foreignKey: {
-        allowNull: true
+        allowNull: false
       }
-  	});
+    });
+
+    newSentence.belongsTo(models.authors, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
   };
+
 
   return newSentence;
 };

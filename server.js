@@ -7,8 +7,9 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
-var session = require('express-session');
-// var auth = require('./public/js/login.js')
+
+
+
 
 // Sets up the Express App
 // =============================================================
@@ -29,16 +30,18 @@ app.use(express.static("public"));
 
 
 //auth Sessions
-  // app.use(cookieParser());
-  // app.use(session({secret: 'friendscripts',resave: true, saveUninitialized: true}));
-  // app.use(auth.initialize());
-  // app.use(auth.session());
 
+  app.use(cookieParser());
+
+  require('./config/passport.js')(app);
+  
+  
 
 // Routes
 // =============================================================
 require("./routes/post-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
+require("./routes/authRoutes.js")(app);
 // require("./routes/author-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app

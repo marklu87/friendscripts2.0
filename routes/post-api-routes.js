@@ -66,8 +66,10 @@ app.get("/api/sentences", function(req, res) {
     // console.log(req.body.authorID);
     // console.log(req.body.sentence);
     db.newSentence.create({
-      // Sentence: req.body.sentence,
-      // storyID: req.body.storyID,
+
+      sentence: req.body.sentence,
+      storyID: req.body.storyID,
+
       authorID: 1
 
     }).then(function(result) {
