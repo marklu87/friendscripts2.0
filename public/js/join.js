@@ -32,9 +32,14 @@ $.get("/api/stories", function(data) {
                                           </div>
                                         </div>`);
 
-    $("#storyID-" + data[i].id).bind('click', {id: data[i].id}, (function(event) {
+    $("#joinScript-" + data[i].id).bind('click', {id: data[i].id}, (function(event) {
       window.location.href = "http://localhost:8080/edit/" + event.target.id;
     }));
+
+    $("#readScript-" + data[i].id).bind('click', {id: data[i].id}, (function(event) {
+      window.location.href = "http://localhost:8080/" + event.target.id;
+    }));
+
   }
 });
 

@@ -32,7 +32,7 @@ module.exports = function(app) {
   });
 
   // read route loads read.html
-  app.get("/read", function(req, res) {
+  app.get("/readScript-:storyID", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/read.html"));
   });
 
