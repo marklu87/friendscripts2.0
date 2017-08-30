@@ -37,9 +37,10 @@ module.exports = function(app) {
   });
 
   // join route loads join.html
-  // app.get("/join", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/join.html"));
-  // });
+  app.get("/join", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/join.html"));
+  });
+
 
 
 // app.get("/edit/:storyID", function(req, res) {
