@@ -7,20 +7,21 @@ module.exports = function(sequelize, DataTypes) {
     sentence: {
       type: DataTypes.STRING,
       allowNull: false
-    },
-    authorID: {
-      type: DataTypes.STRING
     }
+    // ,
+    // authorID: {
+    //   type: DataTypes.STRING
+    // }
     });
-  
+
 
   newStory.associate = function(models) {
   	newStory.belongsTo(models.authors, {
       foreignKey: {
         allowNull: false
-  	}
+  	   }
   });
-
-  return newStory;
 };
+  return newStory;
+
 };
