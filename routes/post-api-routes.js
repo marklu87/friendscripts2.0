@@ -18,7 +18,7 @@ module.exports = function(app) {
     // if (req.query.author_id) {
     //   query.AuthorId = req.query.author_id;
     // }
-    db.newStory.findAll({}).then(function(result) {
+    db.stories.findAll({}).then(function(result) {
       res.json(result);
     });
   });
@@ -28,7 +28,7 @@ app.get("/api/sentences", function(req, res) {
     // if (req.query.author_id) {
     //   query.AuthorId = req.query.author_id;
     // }
-    db.newStory.findOne({storyID: req.body.storyID}).then(function(result) {
+    db.stories.findOne({storyID: req.body.storyID}).then(function(result) {
       res.json(result);
     });
   });
@@ -51,9 +51,9 @@ app.get("/api/sentences", function(req, res) {
     // console.log(req.body.storyTitle);
     // console.log(req.body.authorID);
     // console.log(req.body.sentence);
-    db.newStory.create({
+    db.stories.create({
       // storyTitle: req.body.storyTitle,
-      // authorID: req.body.authorID,
+      authorID: 1,
       sentence: req.body.sentence
     }).then(function(result) {
       res.json(result);
@@ -63,10 +63,11 @@ app.get("/api/sentences", function(req, res) {
 
   app.post("/api/sentences", function(req, res) {
     // console.log(req.body.storyTitle);
-    // console.log(req.body.authorID);
-    // console.log(req.body.sentence);
-    db.newSentence.create({
-      Sentence: req.body.sentence,
+    console.log(req.body.storyID);
+    console.log(req.body.sentence);
+    db.sentences.create({
+
+      sentence: req.body.sentence,
       storyID: req.body.storyID,
       authorID: 1
 
