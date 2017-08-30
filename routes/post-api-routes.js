@@ -18,44 +18,21 @@ module.exports = function(app) {
     // if (req.query.author_id) {
     //   query.AuthorId = req.query.author_id;
     // }
-    db.stories.findAll({}).then(function(result) {
+    db.stories.findAll({include: [db.authors]}).then(function(result) {
+
       res.json(result);
     });
   });
 
-  app.get("/api/fullstory-:id", function(req, res) {
-    // console.log(req.params.id);
-    db.sentences.findAll({
-      where: {
-        storyId: req.params.id
-      },
-      include: [db.stories]
-    }).then(function(result) {
+app.get("/api/sentences", function(req, res) {
+    // var query = {};
+    // if (req.query.author_id) {
+    //   query.AuthorId = req.query.author_id;
+    // }
+    db.stories.findOne({storyID: req.body.storyID}).then(function(result) {
       res.json(result);
     });
   });
-
-  app.get("/api/firstsentence-:id", function(req, res) {
-    // console.log(req.params.id);
-    db.stories.findAll({
-      attributes: ['sentence'],
-      where: {
-        id: req.params.id
-      }
-    }).then(function(result) {
-      res.json(result);
-    });
-  });
-
-  app.get("/api/sentences", function(req, res) {
-      // var query = {};
-      // if (req.query.author_id) {
-      //   query.AuthorId = req.query.author_id;
-      // }
-      db.stories.findOne({storyID: req.body.storyId}).then(function(result) {
-        res.json(result);
-      });
-    });
 
 
   // Get rotue for retrieving a single post
@@ -72,11 +49,11 @@ module.exports = function(app) {
 
   // POST route for saving a new post
   app.post("/api/stories", function(req, res) {
-    console.log(req.body.storyTitle);
+    // console.log(req.body.storyTitle);
     // console.log(req.body.authorID);
     // console.log(req.body.sentence);
     db.stories.create({
-      storyTitle: req.body.storyTitle,
+      // storyTitle: req.body.storyTitle,
       authorId: 1,
       sentence: req.body.sentence
     }).then(function(result) {
@@ -87,12 +64,12 @@ module.exports = function(app) {
 
   app.post("/api/sentences", function(req, res) {
     // console.log(req.body.storyTitle);
-    console.log(req.body.storyId);
+    console.log(req.body.storyID);
     console.log(req.body.sentence);
     db.sentences.create({
 
       sentence: req.body.sentence,
-      storyId: req.body.storyId,
+      storyId: req.body.storyID,
       authorId: 1
 
     }).then(function(result) {
