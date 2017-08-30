@@ -2,82 +2,216 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="/css/reset.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="readremaining/src/readremaining.jquery.js"></script> -->
-  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
-  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-  <link rel="stylesheet" href="/css/rr_dark.css"/>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-<div class="newStory">
+    <div class="menu">
+        <div class="navbar-header col-md-12">
+            <a href="#">Friend Scripts</a>
 
-      <ul class="col-md-12 nav">
-        <li role="presentation" class="col-md-4 landingPageBtn newStoryButt"><a href="/create.html">New Story</a></li>
-        <li role="presentation" class="col-md-4 landingPageBtn joinStoryButt"><a href="/join.html">Join Story</a></li>
-        <li role="presentation" class="col-md-4 landingPageBtn readStoryMainButt"><a href="/read.html">Read Story</a></li>
-      </ul>
+            <form id="signin" class="navbar-form navbar-right col-md-8" role="form">
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/newStory">Create</a></li>
+                <li><a href="/join">Join</a></li>
+                <li><a href="/read">Read</a></li>
+              </ul>
 
-      <div class="container col-md-3 leftNav">
-        <img class="col-md-10 col-md-offset-1" alt="Brand" width="200px" src="/images/Asset.png">
-        <img class="col-md-10 col-md-offset-1" alt="Brand" width="200px" src="/images/Asset.png">
-        <img class="col-md-10 col-md-offset-1" alt="Brand" width="200px" src="/images/Asset.png">
-        <img class="col-md-10 col-md-offset-1" alt="Brand" width="200px" src="/images/Asset.png">
-        <img class="col-md-10 col-md-offset-1" alt="Brand" width="200px" src="/images/Asset.png">
-      </div>
-      <div class="container col-md-9 bgPic rightView">
-        <nav class="row">
-          <div class="buttonNav container newStoryStyle">
-            <div class="col-md-4">
+            </form>
+        </div>
+    </div> <!--closing ".menu" div-->
+    <br>
+    <br>
+    <div class="container-fluid mainContain">
+        <div class="row">
+
+            <div class="col-md-2 col-sm-4 bootSideNav">
+                <div class="container-fluid well span6">
+                    <div class="row-fluid">
+                        <div class="span2">
+                            <img src="https://scontent-dft4-2.xx.fbcdn.net/v/t1.0-9/16142758_10153729958309649_8073159990208046836_n.jpg?oh=9b85aff32142f018492a0ad1717383e4&oe=5A15E2DC" class="img-circle">
+                        </div>
+
+                        <div class="span8">
+                            <h3>Chase Crumley</h3>
+                            <h6>Email: MyEmail@servidor.com</h6>
+                            <h6>Location: Denver</h6>
+                            <h6>Pin Name:</h6>
+                            <h6><a href="#">More... </a></h6>
+                        </div>
+                        <div class="span2">
+                            <div class="btn-group">
+                                <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                                        Action
+                                        <span class="icon-cog icon-white"></span><span class="caret"></span>
+                                    </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#"><span class="icon-wrench"></span> Modify</a></li>
+                                    <li><a href="#"><span class="icon-trash"></span> Delete</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <nav class="devsite-section-nav devsite-nav nocontent" style="left: auto; max-height: 643px; position: relative; top: 0px;">
+                        <ul class="devsite-nav-list devsite-nav-expandable">
+                            <li class="devsite-nav-item devsite-nav-item-heading1">
+                                <span class="devsite-nav-title devsite-nav-title-no-path" track-type="leftNav" track-name="expandNavSectionNoLink" track-metadata-position="0">
+                                    <span id="">Cloud Speech API</span></span>
+                            </li>
+                            <li class="devsite-nav-item devsite-nav-item devsite-nav-active">
+                                <a href="#" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">
+                                    <span>Product Overview</span></a>
+                            </li>
+                            <li class="devsite-nav-item">
+                                <a href="https://www.google.com" target="_blank" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">
+                                    <span>Documentation</span></a>
+                            </li>
+                            <li class="devsite-nav-item">
+                                <a href="#" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">
+                                    <span>Quickstart</span></a>
+                            </li>
+                            <hr>
+                            <li class="devsite-nav-item devsite-nav-item-heading"><span class="devsite-nav-title devsite-nav-title-no-path" track-type="leftNav" track-name="expandNavSectionNoLink" track-metadata-position="0">
+                                    <span>How-to Guides</span></span>
+                            </li>
+                            <li class="devsite-nav-item">
+                                <a href="#" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">
+                                    <span>All How-to Guides</span></a>
+                            </li>
+                            <li class="devsite-nav-item">
+                                <a href="#" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">
+                                    <span>Authenticating to the API</span></a>
+                            </li>
+                            <li class="devsite-nav-item">
+                                <a href="#" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">
+                                    <span>Performing Synchronous Speech Recognition</span></a>
+                            </li>
+                            <li class="devsite-nav-item">
+                                <a href="#" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">
+                                    <span>Performing Asynchronous Speech Recognition</span></a>
+                            </li>
+                            <li class="devsite-nav-item">
+                                <a href="#" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">
+                                    <span>Streaming Speech Recognition</span></a>
+                            </li>
+                            <li class="devsite-nav-item">
+                                <a href="#" class="devsite-nav-title gc-analytics-event" track-type="leftNav" track-name="titleLink" track-metadata-position="0" data-category="Site-Wide Custom Events" data-label="Left nav" data-action="click">
+                                    <span>Base64 Encoding</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <div class="col-md-10 col-md-offset-1">
-              <br>
-              <div class="form-group">
-                <label for="exampleTextarea">Story Title</label>
-                <textarea class="form-control userTitle" style="box-shadow: 2px 2px #3c7079 min-width: 100%"></textarea>
-              </div>
-              <br>
-              <div class="form-group">
-                <label for="exampleTextarea">Story Author</label>
-                <textarea class="form-control userAuthor" style="min-width: 100%"></textarea>
-              </div>
-              <br>
-              <div class="form-group">
-                <label for="exampleTextarea">Enter your Sentences</label>
-                <textarea id=newStoryText maxlength="150" class="form-control" style="min-width: 100%"></textarea>
-                <div class="charCount">Characters Remaining: 150</div>
-              </div>
-              <button lexicalCategory="noun" type="reset" style="background: #005077" class="btn btn-default lexicalNew buttonBg col-md-2">Noun</button>
-              <button lexicalCategory="verb" type="reset" style="background: #005077" class="btn btn-default lexicalNew buttonBg col-md-2">Verb</button>
-              <button lexicalCategory="adjective" type="reset" style="background: #005077" class="btn btn-default lexicalNew buttonBg col-md-2">Adjective</button>
-              <button lexicalCategory="adverb" type="reset" style="background: #005077" class="btn btn-default lexicalNew buttonBg col-md-2">Adverb</button>
-              <button lexicalCategory="idiom" type="reset" style="background: #005077" class="btn btn-default lexicalNew buttonBg col-md-2">Idiom</button>
-              <br>
-              <br>
-              <div class="subButtonPosition">
-                <button type="submit" style="background: #005077" class="btn btn-primary commitNewStory col-md-4 col-md-offset-4 ">Submit</button>
-              </div>
-              <br>
-              <div class="DefinitionStyle col-md-4">
-                <h2>Definitions</h2>
-              </div>
-              <div class="thumbStyle col-md-12">
-              </div>
+
+
+
+
+            <div class="col-md-7 col-sm-8 bootMain">
+              <div class="container">
+            	<div class="row">
+                <div class="col-md-4">
+            		<div class="form_main">
+                            <h4 class="heading"><strong>Quick </strong> Contact <span></span></h4>
+                            <div class="form">
+                            <form id="contactFrm">
+                                <input type="text" required="" placeholder="Title of New Story" value="" class="txt userTitle">
+
+                            	 <textarea id="newStoryText" placeholder="Your Message" name="mess" type="text" class="txt_3"></textarea>
+                                 <input type="submit" value="submit" name="submit" class="txt2 commitNewStory">
+                            </form>
+                        </div>
+                        </div>
+                        </div
+            	</div>
+            </div>
             </div>
           </div>
-        </nav>
-      </div>
-  </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+            <div class="col-md-3  col-sm-12 bootSide title">
+                <br />
+                <!-- <div class="well well-sm">
+                    <div class="media">
+                        <a class="thumbnail pull-left" href="#">
+                            <img class="media-object" src="http://critterapp.pagodabox.com/img/user.jpg">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">First Last Name</h4>
+                            <br />
+                            <h1 class="tag-title">Story</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pharetra quam sollicitudin nibh aliquam finibus. Etiam efficitur felis vel imperdiet varius. Maecenas bibendum elementum molestie. Lorem ipsum dolor sit amet,
+                            </p>
+                            <p><span class="label label-info">888 photos</span> <span class="label label-warning">150 followers</span></p>
+                            <p>
+                                <a href="#" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-comment"></span> Message</a>
+                                <a href="#" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-heart"></span> Favorite</a>
+                                <a href="#" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-ban-circle"></span> Unfollow</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="well well-sm">
+                    <div class="media">
+                        <a class="thumbnail pull-left" href="#">
+                            <img class="media-object" src="http://critterapp.pagodabox.com/img/user.jpg">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">First Last Name</h4>
+                            <br />
+                            <h1 class="tag-title">Story</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pharetra quam sollicitudin nibh aliquam finibus. Etiam efficitur felis vel imperdiet varius. Maecenas bibendum elementum molestie. Lorem ipsum dolor sit amet,
+                            </p>
+                            <p><span class="label label-info">888 photos</span> <span class="label label-warning">150 followers</span></p>
+                            <p>
+                                <a href="#" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-comment"></span> Message</a>
+                                <a href="#" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-heart"></span> Favorite</a>
+                                <a href="#" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-ban-circle"></span> Unfollow</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="well well-sm">
+                    <div class="media">
+                        <a class="thumbnail pull-left" href="#">
+                            <img class="media-object" src="http://critterapp.pagodabox.com/img/user.jpg">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">First Last Name</h4>
+                            <br />
+                            <h1 class="tag-title">Story</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pharetra quam sollicitudin nibh aliquam finibus. Etiam efficitur felis vel imperdiet varius. Maecenas bibendum elementum molestie. Lorem ipsum dolor sit amet,
+                            </p>
+                            <p><span class="label label-info">888 photos</span> <span class="label label-warning">150 followers</span></p>
+                            <p>
+                                <a href="#" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-comment"></span> Message</a>
+                                <a href="#" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-heart"></span> Favorite</a>
+                                <a href="#" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-ban-circle"></span> Unfollow</a>
+                            </p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/create.js"></script>
 
 </body>
-
-<script type="text/javascript" src="./js/create.js"></script>
 
 </html>

@@ -18,9 +18,10 @@
 
 
 $(".commitNewStory").click(function(){
+  console.log("here");
 
   var newPost = {
-    // storyTitle: $(".userTitle").val().trim(),
+    storyTitle: $(".userTitle").val().trim(),
     // authorID: $(".userAuthor").val().trim(),
     sentence: $("#newStoryText").val().trim()
   };
@@ -115,22 +116,22 @@ $.get("/api/stories", function(data) {
         //     window.location.href = "http://localhost:8080/edit/" + event.target.id;
         // }));
     }
+  });
 
-    $("#readScript").click(function(event){
-      event.preventDefault();
-      if ($(this).val() == "read"){
-        $("#toggleJoin").hide();
-        $("#toggleRead").show();
+  $(".bootSide").on("click", "#readScript", function(event){
+    event.preventDefault();
+    if ($(this).val() == "read"){
+      $("#toggleJoin").hide();
+      $("#toggleRead").show();
 
-      }
-    });
-    $("#joinScript").click(function(event){
-      event.preventDefault();
-      if ($(this).val() == "join"){
-        $("#toggleJoin").show();
-        $("#toggleRead").hide();
-      }
-    });
+    }
+  });
+  $(".bootSide").on("click", "#joinScript", function(event){
+    event.preventDefault();
+    if ($(this).val() == "join"){
+      $("#toggleJoin").show();
+      $("#toggleRead").hide();
+    }
   });
 
 // on click for the read story div

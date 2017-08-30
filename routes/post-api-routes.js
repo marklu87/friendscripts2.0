@@ -48,11 +48,11 @@ app.get("/api/sentences", function(req, res) {
 
   // POST route for saving a new post
   app.post("/api/stories", function(req, res) {
-    // console.log(req.body.storyTitle);
+    console.log(req.body.storyTitle);
     // console.log(req.body.authorID);
     // console.log(req.body.sentence);
     db.stories.create({
-      // storyTitle: req.body.storyTitle,
+      storyTitle: req.body.storyTitle,
       authorId: 1,
       sentence: req.body.sentence
     }).then(function(result) {
