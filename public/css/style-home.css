@@ -1,11 +1,60 @@
 
-.mainContain {
-  margin-top: 10px;
+.scriptStyle {
+  position: absolute;
+  bottom: 80px;
+
+}
+
+.mainHomeDiv {
+  position: absolute;
+  bottom: 100px;
+  left: 60px;
+
+}
+
+body {
+  font: normal 30px/40px Arial, sans-serif;
+  color: #fff;
 }
 a {
   color: white;
-  margin-right: 26px;
+  margin-right: 15px;
+}
+ p {
+   margin-top: 9px;
+  height: 50px;
+  float: left;
+  margin-right: 0.3em;
+}
+b {
   margin-top: 20px;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  height: 50px;
+}
+span1 {
+ display: inline-block;
+color: #e74c3c;
+position: relative;
+white-space: nowrap;
+top: 0;
+left: 0;
+-webkit-animation: move 5s;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-delay: 1s;
+}
+
+@keyframes move {
+0%  { top: 0px; }
+20% { top: -50px; }
+40% { top: -100px; }
+60% { top: -150px; }
+80% { top: -200px; }
+}
+
+.mainContain {
+  margin-top: 10px;
 }
 
 #toggleRead  textarea {
@@ -22,6 +71,7 @@ a {
 .menu ul {
     list-style: none outside none;
     display: block;
+    color: #fff;
 }
 .menu li {
     line-height: 18px;
@@ -107,7 +157,7 @@ h1 {
 
 .nav-side-menu ul .sub-menu li.active,
 .nav-side-menu li .sub-menu li.active {
-  color: #d19b3d;
+  color: #fff;
 }
 
 .nav-side-menu ul .sub-menu li.active a,
@@ -148,7 +198,8 @@ h1 {
 
 .nav-side-menu li a {
   text-decoration: none;
-  color: #25488E;
+  color: white;
+  z-index: 2;
 }
 
 .nav-side-menu li a i {
@@ -220,13 +271,6 @@ h1 {
 .bootMainJoin h4 {
   margin-left: 20px;
   top: 55px;
-  color: #545454;
-}
-
-.bootMainJoin h2 {
-  font-size: 40px;
-  margin-left: 20px;
-  top: 55px;
   color: grey;
 }
 
@@ -272,7 +316,8 @@ textarea {
 .btn {
   background-color: #8ab8bc;
   border: none;
-  color: #white;
+  color: white;
+  z-index: 2;
 }
 
 .leftNav {
@@ -414,6 +459,7 @@ img.img-circle {
 .navbar .nav-collapse .navbar-form {
   border-width: 0;
   box-shadow: none;
+  color: #fff;
 }
 
 .nav-collapse>li {
@@ -519,7 +565,7 @@ img.img-circle {
 }
 
 .newStoryDivTwo h6 {
-  color: #545454;
+  color: #2dacd3;
   /*margin-top: 18px;*/
 }
 
@@ -552,7 +598,7 @@ img.img-circle {
 }
 
 .bootMainJoin h1 {
-  color: #545454;
+  color: #1a658b;
   font-size: 80px;
 
 }
@@ -563,7 +609,7 @@ img.img-circle {
 }
 
 .newStoryDiv h6 {
-  color: #545454;
+  color: #2dacd3;
   margin-top: 18px;
 }
 

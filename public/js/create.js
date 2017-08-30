@@ -97,26 +97,43 @@ $("#newStoryText").keyup(function() {
 
 $.get("/api/stories", function(data) {
     for (var i = 0; i < data.length; i++) {
-        var storyDiv = $(`<div class="col-md-10 col-md-offset-1 storyStyle" >`);
-        storyDiv.addClass("newStoryDiv");
-        storyDiv.attr("id", "storyID-" + data[i].id)
-        $(".title").append(storyDiv);
+        var storyDivTwo = $(`<div class="col-md-12">`);
+        storyDivTwo.addClass("newStoryDivTwo");
+        storyDivTwo.attr("id", "storyID-" + data[i].id)
+        $(".sideTitle").append(storyDivTwo);
 
-        $("#storyID-" + data[i].id).append(`<h4 class="col-md-12">${data[i].authorID}</h4> <br>`);
-        $("#storyID-" + data[i].id).append(`<h3>${data[i].storyTitle}</h3>`);
-        $("#storyID-" + data[i].id).append(`<p col-md-8 col-md-offset-2>${data[i].sentence}</p> <br>`);
-        $("#storyID-" + data[i].id).append(`<button id="joinScript" type="button" class="btn btn-primary btn-sm btn3d col-md-4" value="join">Join</button>`);
-        $("#storyID-" + data[i].id).append(`<button id="readScript" type="button" class="btn btn-info btn-sm btn3d col-md-4" value="read">Read</button>`);
-        $("#storyID-" + data[i].id).append(`<div class="row"></div>`);
-
-        // $("#storyID-" + data[i].id).append(`<button type="button" class="btn btn-primary btn-sm btn3d col-md-2">Read</button>`);
-        // $("#storyID-" + data[i].id).append(`<button type="button" class="btn btn-primary btn-sm btn3d col-md-2">Read</button>`);
-        // $("#storyID-" + data[i].id).append(`<button type="button" class="btn btn-primary btn-sm btn3d col-md-2">Read</button>`);
-        // $("#storyID-" + data[i].id).bind('click', { id: data[i].id }, (function(event) {
-        //     window.location.href = "http://localhost:8080/edit/" + event.target.id;
-        // }));
+        // $("#storyID-" + data[i].id).append(`<h3 class="col-md-12">${data[i].authorID}</h3>`);
+        // $("#storyID-" + data[i].id).append(`<h6 class="col-md-12>${data[i].storyTitle}</h6>`);
+        // $("#storyID-" + data[i].id).append(`<p class="col-md-12>${data[i].sentence}</p>`);
+        // $("#storyID-" + data[i].id).append(`<button id="joinScript" type="button" class="btn btn-primary btn-sm btn3d col-md-4" value="join">Join</button>`);
+        // $("#storyID-" + data[i].id).append(`<button id="readScript" type="button" class="btn btn-info btn-sm btn3d col-md-4" value="read">Read</button>`);
     }
   });
+
+  $.get("/api/stories", function(data) {
+      for (var i = 0; i < data.length; i++) {
+          var storyDiv = $(`<div class="col-md-3 storyStyle" >`);
+          storyDiv.addClass("newStoryDiv");
+          storyDiv.attr("id", "storyID-" + data[i].id)
+          $(".title").append(storyDiv);
+
+
+          $("#storyID-" + data[i].id).append(`<h3 class="col-md-12">${data[i].storyTitle}</h3>`);
+          $("#storyID-" + data[i].id).append(`<h6 class="col-md-12">by: ${data[i].authorID}</h6>`);
+          $("#storyID-" + data[i].id).append(`<p class="col-md-12">${data[i].sentence}</p><br>`);
+          $("#storyID-" + data[i].id).append(`<button id="readScript" type="button" class=" btn btn-info btn-sm btn3d col-md-4 col-md-offset-1" value="read">Read</button>`);
+          $("#storyID-" + data[i].id).append(`<button id="joinScript" type="button" class=" btn btn-primary btn-sm btn3d col-md-4 col-md-offset-1" value="join">Join</button>`+ `<br><hr></hr>`);
+
+
+
+          // $("#storyID-" + data[i].id).append(`<button type="button" class="btn btn-primary btn-sm btn3d col-md-2">Read</button>`);
+          // $("#storyID-" + data[i].id).append(`<button type="button" class="btn btn-primary btn-sm btn3d col-md-2">Read</button>`);
+          // $("#storyID-" + data[i].id).append(`<button type="button" class="btn btn-primary btn-sm btn3d col-md-2">Read</button>`);
+          // $("#storyID-" + data[i].id).bind('click', { id: data[i].id }, (function(event) {
+          //     window.location.href = "http://localhost:8080/edit/" + event.target.id;
+          // }));
+      }
+    });
 
   $(".bootSide").on("click", "#readScript", function(event){
     event.preventDefault();
