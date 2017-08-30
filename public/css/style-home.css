@@ -1,19 +1,101 @@
 
+.scriptStyle {
+  position: absolute;
+  bottom: 80px;
+
+}
+
+.mainHomeDiv {
+  position: absolute;
+  bottom: 100px;
+  left: 60px;
+
+}
+
+.logoPosition {
+  position: absolute;
+  bottom: 300px;
+  margin: 20px;
+  background-color: white;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#919191+94,a5a5a5+100&0.65+7,0+100 */
+
+
+}
+
+.loginPosition {
+  background-color: rgba(255, 255, 255, 0.5);
+    color: #e74c3c;
+    position: static;
+    bottom: 0;
+    /*margin-left: 495px;*/
+}
+
+.loginPosition h1 {
+  font-size: 35px;
+
+}
+.loginPosition button {
+  margin-top: 23px;
+  width: 120px;
+  margin-left: -7px;
+  margin-right: 107px;
+}
+
+.loginPosition form {
+  margin-top: 15px;
+}
+
+.bgimage {
+  position: absolute;
+
+
+
+}
+
+body {
+  font: normal 30px/40px Arial, sans-serif;
+  /*color: #fff;*/
+}
+a {
+  /*color: white;*/
+  margin-right: 15px;
+}
+ p {
+   color: white;
+   margin-top: 9px;
+  height: 50px;
+  float: left;
+  margin-right: 0.3em;
+}
+b {
+  margin-top: 20px;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  height: 50px;
+}
+span1 {
+ display: inline-block;
+color: #e74c3c;
+position: relative;
+white-space: nowrap;
+top: 0;
+left: 0;
+-webkit-animation: move 5s;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-delay: 1s;
+}
+
+@keyframes move {
+0%  { top: 0px; }
+20% { top: -50px; }
+40% { top: -100px; }
+60% { top: -150px; }
+80% { top: -200px; }
+}
+
 .mainContain {
   margin-top: 10px;
-}
-
-
-
-.menu a {
-  color: white;
-  margin-right: 26px;
-  margin-top: 20px;
-  font-size: 20px;
-}
-
-.menu p {
-  color: white;
 }
 
 #toggleRead  textarea {
@@ -30,6 +112,7 @@
 .menu ul {
     list-style: none outside none;
     display: block;
+    color: #fff;
 }
 .menu li {
     line-height: 18px;
@@ -115,7 +198,7 @@ h1 {
 
 .nav-side-menu ul .sub-menu li.active,
 .nav-side-menu li .sub-menu li.active {
-  color: #d19b3d;
+  color: #fff;
 }
 
 .nav-side-menu ul .sub-menu li.active a,
@@ -156,7 +239,8 @@ h1 {
 
 .nav-side-menu li a {
   text-decoration: none;
-  color: #25488E;
+  color: white;
+  z-index: 2;
 }
 
 .nav-side-menu li a i {
@@ -228,13 +312,6 @@ h1 {
 .bootMainJoin h4 {
   margin-left: 20px;
   top: 55px;
-  color: #545454;
-}
-
-.bootMainJoin h2 {
-  font-size: 40px;
-  margin-left: 20px;
-  top: 55px;
   color: grey;
 }
 
@@ -280,7 +357,8 @@ textarea {
 .btn {
   background-color: #8ab8bc;
   border: none;
-  color: #white;
+  color: white;
+  z-index: 2;
 }
 
 .leftNav {
@@ -345,6 +423,9 @@ img.img-circle {
   margin: 0px;
   z-index: 1;
   opacity: 0.9;
+}
+.menu a{
+color: white;
 }
 
 .menu .navbar-nav>.active>a {
@@ -422,6 +503,7 @@ img.img-circle {
 .navbar .nav-collapse .navbar-form {
   border-width: 0;
   box-shadow: none;
+  color: #fff;
 }
 
 .nav-collapse>li {
@@ -527,7 +609,7 @@ img.img-circle {
 }
 
 .newStoryDivTwo h6 {
-  color: #545454;
+  color: #2dacd3;
   /*margin-top: 18px;*/
 }
 
@@ -535,8 +617,6 @@ img.img-circle {
   height: 100px;
 }
 .newStoryDivTwo button {
-  margin-top: 67px;
-margin-left: 37px;
 }
 
 
@@ -554,27 +634,15 @@ margin-left: 37px;
   box-shadow: -2px 4px 5px -2px rgba(0,0,0,0.17);
 
 }
-/*.newStoryDiv button {
+.newStoryDiv button {
   position: absolute;
   bottom: 0;
   left: 0;
-  margin: 25px;
-}*/
-.readButtStyle {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: 25px;
-}
-.buttStyle {
-  position: absolute;
-  bottom: 0;
-  left: 35;
   margin: 25px;
 }
 
 .bootMainJoin h1 {
-  color: #545454;
+  color: #1a658b;
   font-size: 80px;
 
 }
@@ -585,7 +653,7 @@ margin-left: 37px;
 }
 
 .newStoryDiv h6 {
-  color: #545454;
+  color: #2dacd3;
   margin-top: 18px;
 }
 
@@ -635,25 +703,25 @@ form_main {
     width: 100%;
 }
 .form_main h4 {
-  font-family: roboto;
-  font-size: 20px;
-  font-weight: 300;
-  margin-bottom: 15px;
-  margin-top: 20px;
-  text-transform: uppercase;
+    font-family: roboto;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    text-transform: uppercase;
 }
 .heading {
-  border-bottom: 1px solid #d9534f;
-  padding-bottom: 9px;
-  position: relative;
+    border-bottom: 1px solid #fcab0e;
+    padding-bottom: 9px;
+    position: relative;
 }
 .heading span {
-  background: #a94442 none repeat scroll 0 0;
-  bottom: -2px;
-  height: 3px;
-  left: 0;
-  position: absolute;
-  width: 183px;
+    background: #9e6600 none repeat scroll 0 0;
+    bottom: -2px;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    width: 75px;
 }
 .form {
     border-radius: 7px;
