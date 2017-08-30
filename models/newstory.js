@@ -15,10 +15,8 @@ module.exports = function(sequelize, DataTypes) {
 
 
   newStory.associate = function(models) {
-  	newStory.belongsTo(models.authors, {
-      foreignKey: {
-        allowNull: false
-    	}
+  	newStory.hasMany(models.authors, {
+      foreignKey: 'authorID'
   });
 
   return newStory;
