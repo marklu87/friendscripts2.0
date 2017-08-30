@@ -1,6 +1,6 @@
 
  $(document).ready(function() {
-   $("#myModal").modal('show');
+
 
   // Initial Values
    var name = "";
@@ -22,7 +22,7 @@ $(".commitNewStory").click(function(){
 
   var newPost = {
     storyTitle: $(".userTitle").val().trim(),
-    // authorID: $(".userAuthor").val().trim(),
+    authorID: $(".userAuthor").val().trim(),
     sentence: $("#newStoryText").val().trim()
   };
 

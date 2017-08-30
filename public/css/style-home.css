@@ -42,10 +42,10 @@
 
 body {
   font: normal 30px/40px Arial, sans-serif;
-  color: #fff;
+  /*color: #fff;*/
 }
 a {
-  color: white;
+  /*color: white;*/
   margin-right: 15px;
 }
  p {
@@ -410,6 +410,9 @@ img.img-circle {
   margin: 0px;
   z-index: 1;
   opacity: 0.9;
+}
+.menu a{
+color: white;
 }
 
 .menu .navbar-nav>.active>a {
