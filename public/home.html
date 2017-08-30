@@ -37,16 +37,20 @@
   </div> <!--closing ".menu" div-->
 
   <div class="bgimage col-md-12">
+    <br>
     <img class="col-md-12 img-responsive" src="./images/plax-bg-blurry.png" alt="">
     <div class="login">
       <div class="row">
-        <div class="col-md-3 loginPosition">
-          <h1>Login</h1>
-          <form method="post">
-            <input type="text" name="u" placeholder="Username" required="required" />
-            <input type="password" name="p" placeholder="Password" required="required" />
-            <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+        <div class="col-md-12 loginPosition">
+          <a href="/auth/signup">Click Me to Create Account</a>
+
+
+          <h2 class="col-md-1">Login</h2>
+          <form class="col-md-4" method="post">
+            <input class="col-md-6" type="text" name="email" placeholder="Username" required="required" />
+            <input class="col-md-6" type="password" name="psw" placeholder="Password" required="required" />
           </form>
+          <button type="submit" class=" btn btn-primary btn-block btn-large col-md-3">Let me in.</button>
         </div>
       </div>
     </div>
