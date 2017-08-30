@@ -8,11 +8,15 @@ module.exports = function(sequelize, DataTypes) {
 
    newSentence.associate = function(models) {
     newSentence.belongsTo(models.stories, {
-      foreignKey: 'storyID'
+      foreignKey: {
+          allowNull: false
+      }
     });
 
     newSentence.belongsTo(models.authors, {
-      foreignKey: 'authorID'
+      foreignKey: {
+        allowNull: false
+      }
     });
   };
 
