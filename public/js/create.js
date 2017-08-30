@@ -1,6 +1,6 @@
 
  $(document).ready(function() {
-
+   $("#myModal").modal('show');
 
   // Initial Values
    var name = "";
@@ -89,6 +89,7 @@ $("#newStoryText").keyup(function() {
    }
  })
 
+
 });
 
 
@@ -150,5 +151,8 @@ $.get("/api/stories", function(data) {
       $("#toggleRead").hide();
     }
   });
+
+
+
 
 // on click for the read story div

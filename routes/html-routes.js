@@ -41,6 +41,10 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/join.html"));
   });
 
+  app.get("/edit", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/edit.html"));
+  });
+
 
 
 // app.get("/edit/:storyID", function(req, res) {

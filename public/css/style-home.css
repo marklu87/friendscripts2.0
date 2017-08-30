@@ -12,6 +12,34 @@
 
 }
 
+.logoPosition {
+  position: absolute;
+  bottom: 300px;
+  margin: 20px;
+  background-color: white;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#919191+94,a5a5a5+100&0.65+7,0+100 */
+
+
+}
+
+.loginPosition {
+  position: relative;
+      color: black;
+      bottom: 1757px;
+      margin: 100% 63px;
+      /* margin-top: 46px; */
+      background-color: rgba(255, 255, 255, 0.5);
+      height: 275px;
+
+}
+
+.bgimage {
+  position: absolute;
+
+
+
+}
+
 body {
   font: normal 30px/40px Arial, sans-serif;
   color: #fff;
