@@ -1,6 +1,5 @@
 
  $(document).ready(function() {
-   $("#myModal").modal('show');
 
   // Initial Values
    var name = "";
@@ -32,11 +31,11 @@ $(".commitNewStory").click(function(){
         console.log(data);
       });
 
-  $(".userTitle").val("");
-  $(".userAuthor").val("");
-  $("#newStoryText").val("");
-  $(".thumbStyle").empty();
-  $(".charCount").text("Characters Remaining: " + 150);
+  // $(".userTitle").val("");
+  // $(".userAuthor").val("");
+  // $("#newStoryText").val("");
+  // $(".thumbStyle").empty();
+  // $(".charCount").text("Characters Remaining: " + 150);
 })
 
 //Lexical Buttons for New Story
