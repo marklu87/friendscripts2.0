@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  $("#toggleRead").hide();
 
     // Initial Values
     var name = "";
@@ -103,24 +103,33 @@ $.get("/api/stories", function(data) {
         $("#storyID-" + data[i].id).append(`<h4 class="col-md-12">${data[i].authorID}</h4> <br>`);
         $("#storyID-" + data[i].id).append(`<h3>${data[i].storyTitle}</h3>`);
         $("#storyID-" + data[i].id).append(`<p col-md-8 col-md-offset-2>${data[i].sentence}</p> <br>`);
-        $("#storyID-" + data[i].id).append(`<button id="readScript" type="button" class="btn btn-primary btn-sm btn3d col-md-4">Join</button>`);
-        $("#storyID-" + data[i].id).append(`<button id="joinScript" type="button" class="btn btn-info btn-sm btn3d col-md-4">Read</button>`);
+        $("#storyID-" + data[i].id).append(`<button id="joinScript" type="button" class="btn btn-primary btn-sm btn3d col-md-4" value="join">Join</button>`);
+        $("#storyID-" + data[i].id).append(`<button id="readScript" type="button" class="btn btn-info btn-sm btn3d col-md-4" value="read">Read</button>`);
         $("#storyID-" + data[i].id).append(`<div class="row"></div>`);
-        $("#readScript").click(function(){
-          event.preventDefault();
-        $('#toggleJoin').toggleClass();
-        })
 
         // $("#storyID-" + data[i].id).append(`<button type="button" class="btn btn-primary btn-sm btn3d col-md-2">Read</button>`);
         // $("#storyID-" + data[i].id).append(`<button type="button" class="btn btn-primary btn-sm btn3d col-md-2">Read</button>`);
         // $("#storyID-" + data[i].id).append(`<button type="button" class="btn btn-primary btn-sm btn3d col-md-2">Read</button>`);
-
-
         // $("#storyID-" + data[i].id).bind('click', { id: data[i].id }, (function(event) {
         //     window.location.href = "http://localhost:8080/edit/" + event.target.id;
         // }));
     }
-});
 
+    $("#readScript").click(function(event){
+      event.preventDefault();
+      if ($(this).val() == "read"){
+        $("#toggleJoin").hide();
+        $("#toggleRead").show();
+
+      }
+    });
+    $("#joinScript").click(function(event){
+      event.preventDefault();
+      if ($(this).val() == "join"){
+        $("#toggleJoin").show();
+        $("#toggleRead").hide();
+      }
+    });
+  });
 
 // on click for the read story div
