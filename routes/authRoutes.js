@@ -27,6 +27,7 @@ var passport = require('passport');
   app.post("/auth/signin", passport.authenticate('local-signin', {
         successRedirect: '/newStory',
         failureRedirect: '/auth/signup'
-    }
-    ));
+    })
+
+      );
  	};

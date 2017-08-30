@@ -91,6 +91,7 @@ module.exports = function(passport, authors) {
 
 		passport.use('local-signin', new LocalStrategy(
 
+
 		    {
 
 		        // by default, local strategy uses username and password, we will override with email
@@ -105,6 +106,7 @@ module.exports = function(passport, authors) {
 
 
 		    function(req, email, password, done) {
+					console.log("trying to log in");
 
 		        var User = user;
 
@@ -113,7 +115,7 @@ module.exports = function(passport, authors) {
 		            return bCrypt.compareSync(password, userpass);
 
 		        }
-		 
+
 		        db.authors.findOne({
 		            where: {
 		                email: email
