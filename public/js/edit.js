@@ -11,9 +11,7 @@ $(document).ready(function() {
   var randomWordLength = "";
   var maxCharCount = 150;
   var id;
-  var trimStoryID = window.location.pathname.toString();
-  trimStoryID = trimStoryID.substr(trimStoryID.indexOf("-") + 1)
-  console.log(trimStoryID);
+  
 
 //Lexical Buttons for Story
 $(".lexicalEdit").click(function(){
@@ -77,7 +75,9 @@ $("#editStoryCommit").keyup(function() {
       responsiveVoice.resume();
   });
 
-
+var trimStoryID = window.location.pathname.toString();
+  trimStoryID = trimStoryID.substr(trimStoryID.indexOf("-") + 1)
+  console.log(trimStoryID);
 //Click Function to Post new sentence
 $(".commitNewSentence").click(function(){
   var newPost = {
