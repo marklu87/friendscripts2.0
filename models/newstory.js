@@ -22,6 +22,7 @@ module.exports = function(sequelize, DataTypes) {
   newStory.associate = function(models) {
   	newStory.hasMany(models.newSentence, {
   		// onDelete: "cascade"
+      foreignKey: {allowNull: false}
   	});
   };
 
