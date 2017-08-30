@@ -1,3 +1,5 @@
+alert("i'm working");
+
 $(document).ready(function() {
 
   var trimStoryID = window.location.pathname.toString();
