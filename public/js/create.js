@@ -34,7 +34,7 @@ $.get("/api/stories", function(data) {
           storyDiv.attr("id", "storyID-" + data[i].id)
           $(".title").append(storyDiv);
 
-          $("#storyID-" + data[i].id).append(`<h4 class="col-md-12">${data[i].authorID}</h4>`);
+          $("#storyID-" + data[i].id).append(`<h4 class="col-md-12">${data[i].authorId}</h4>`);
           $("#storyID-" + data[i].id).append(`<h3 class="col-md-12">Story Title: ${data[i].storyTitle}</h3>`);
           $("#storyID-" + data[i].id).append(`<p col-md-8 col-md-offset-2>${data[i].sentence}</p> <br>`);
           $("#storyID-" + data[i].id).append(`<button id="joinScript-${data[i].id}" type="button" class="btn btn-primary btn-sm btn3d col-md-4" value="join">Join</button>`);
