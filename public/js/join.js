@@ -7,7 +7,7 @@ $.get("/api/stories", function(data) {
     $(".title").append(storyDiv);
 
     $("#storyID-" + data[i].id).append(`<h4 class="col-md-12">${data[i].authorID}</h4>`);
-    $("#storyID-" + data[i].id).append(`<h3 class="col-md-12">Story ID: ${data[i].storyTitle}</h3>`);
+    $("#storyID-" + data[i].id).append(`<h3 class="col-md-12">Story Title: ${data[i].storyTitle}</h3>`);
     $("#storyID-" + data[i].id).append(`<p col-md-8 col-md-offset-2>${data[i].sentence}</p> <br>`);
     $("#storyID-" + data[i].id).append(`<div class="row">
                                           <div class="buttStyle col-md-10 col-md-offset-1">
