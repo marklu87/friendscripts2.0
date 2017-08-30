@@ -95,13 +95,14 @@ $("#newStoryText").keyup(function() {
 //Join Story Div
 
 $.get("/api/stories", function(data) {
+    // console.log("stories data: " + data[1].id);
     for (var i = 0; i < data.length; i++) {
       var storyDiv = $("<div>");
       storyDiv.addClass("newStoryDiv");
       storyDiv.attr("id", "storyID-" + data[i].id)
       $(".title").append(storyDiv);
 
-      $("#storyID-" + data[i].id).append("<strong>Title:</strong> " + data[i].storyTitle + "<br>");
+      $("#storyID-" + data[i].id).append("<strong>Story ID:</strong> " + data[i].id + "<br>");
       $("#storyID-" + data[i].id).append("<strong>Author:</strong> " + data[i].authorID + "<br>");
       $("#storyID-" + data[i].id).append("<strong>Story Preview:</strong> "  + data[i].sentence);
 

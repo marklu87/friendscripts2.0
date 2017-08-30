@@ -53,7 +53,7 @@ app.get("/api/sentences", function(req, res) {
     // console.log(req.body.sentence);
     db.stories.create({
       // storyTitle: req.body.storyTitle,
-      authorId: 1,
+      authorId: 2,
       sentence: req.body.sentence
     }).then(function(result) {
       res.json(result);
