@@ -110,4 +110,22 @@ $.get("/api/stories", function(data) {
         window.location.href = "http://localhost:8080/edit/" + event.target.id;
       }));
     }
-});
+
+    $("#readScript").click(function(event){
+      event.preventDefault();
+      if ($(this).val() == "read"){
+        $("#toggleJoin").hide();
+        $("#toggleRead").show();
+
+      }
+    });
+    $("#joinScript").click(function(event){
+      event.preventDefault();
+      if ($(this).val() == "join"){
+        $("#toggleJoin").show();
+        $("#toggleRead").hide();
+      }
+    });
+  });
+
+// on click for the read story div
