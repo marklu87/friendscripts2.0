@@ -1,4 +1,20 @@
 $.get("/api/stories", function(data) {
+    // console.log("stories data: " + data[1].id);
+    for (var i = 0; i < data.length; i++) {
+        var storyDivTwo = $(`<div class="col-md-12">`);
+        storyDivTwo.addClass("newStoryDivTwo");
+        storyDivTwo.attr("id", "storyID-" + data[i].id)
+        $(".sideTitle").append(storyDivTwo);
+
+        // $("#storyID-" + data[i].id).append(`<h3 class="col-md-12">${data[i].authorID}</h3>`);
+        // $("#storyID-" + data[i].id).append(`<h6 class="col-md-12>${data[i].storyTitle}</h6>`);
+        // $("#storyID-" + data[i].id).append(`<p class="col-md-12>${data[i].sentence}</p>`);
+        // $("#storyID-" + data[i].id).append(`<button id="joinScript" type="button" class="btn btn-primary btn-sm btn3d col-md-4" value="join">Join</button>`);
+        // $("#storyID-" + data[i].id).append(`<button id="readScript" type="button" class="btn btn-info btn-sm btn3d col-md-4" value="read">Read</button>`);
+    }
+  });
+
+$.get("/api/stories", function(data) {
   // console.log("stories data: " + data[1].id);
   for (var i = 0; i < data.length; i++) {
     var storyDiv = $(`<div class="col-md-3 storyStyle">`);
