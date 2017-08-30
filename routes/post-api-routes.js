@@ -28,7 +28,7 @@ app.get("/api/sentences", function(req, res) {
     // if (req.query.author_id) {
     //   query.AuthorId = req.query.author_id;
     // }
-    db.stories.findOne({storyID: req.body.storyID}).then(function(result) {
+    db.stories.findOne({storyID: req.body.storyId}).then(function(result) {
       res.json(result);
     });
   });
@@ -63,13 +63,13 @@ app.get("/api/sentences", function(req, res) {
 
   app.post("/api/sentences", function(req, res) {
     // console.log(req.body.storyTitle);
-    console.log(req.body.storyID);
+    console.log(req.body.storyId);
     console.log(req.body.sentence);
     db.sentences.create({
 
       sentence: req.body.sentence,
-      storyID: req.body.storyID,
-      authorID: 1
+      storyId: req.body.storyId,
+      authorId: 1
 
     }).then(function(result) {
       res.json(result);

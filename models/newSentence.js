@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
    newSentence.associate = function(models) {
     newSentence.belongsTo(models.stories, {
       foreignKey: {
-        allowNull: false
+          allowNull: false
       }
     });
 
