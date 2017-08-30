@@ -23,15 +23,39 @@ module.exports = function(app) {
     });
   });
 
-app.get("/api/sentences", function(req, res) {
-    // var query = {};
-    // if (req.query.author_id) {
-    //   query.AuthorId = req.query.author_id;
-    // }
-    db.stories.findOne({storyID: req.body.storyId}).then(function(result) {
+  app.get("/api/fullstory-:id", function(req, res) {
+    // console.log(req.params.id);
+    db.sentences.findAll({
+      where: {
+        storyId: req.params.id
+      },
+      include: [db.stories]
+    }).then(function(result) {
       res.json(result);
     });
   });
+
+  app.get("/api/firstsentence-:id", function(req, res) {
+    // console.log(req.params.id);
+    db.stories.findAll({
+      attributes: ['sentence'],
+      where: {
+        id: req.params.id
+      }
+    }).then(function(result) {
+      res.json(result);
+    });
+  });
+
+  app.get("/api/sentences", function(req, res) {
+      // var query = {};
+      // if (req.query.author_id) {
+      //   query.AuthorId = req.query.author_id;
+      // }
+      db.stories.findOne({storyID: req.body.storyId}).then(function(result) {
+        res.json(result);
+      });
+    });
 
 
   // Get rotue for retrieving a single post
