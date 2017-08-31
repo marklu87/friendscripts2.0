@@ -25,7 +25,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/create.html"));
   });
   // read route loads read.html
-  app.get("/readScript-:storyID", function(req, res) {
+  app.get("/joinreadScript/:storyID", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/read.html"));
   });
   // join route loads join.html

@@ -28,7 +28,7 @@ $.get("/api/stories", function(data) {
     $("#storyID-" + data[i].id).append(`<div class="row">
                                           <div class="buttStyle col-md-10 col-md-offset-1">
                                             <button id="joinScript-${data[i].id}" type="button" class=" btn btn-primary btn-sm btn3d col-md-3" value="join">Join</button>
-                                            <button id="readScript-${data[i].id}" type="button" class=" btn btn-info btn-sm btn3d col-md-3" value="read">Read</button>
+                                            <button data-id=${data[i].id} id="readScript-${data[i].id}" type="button" class=" btn btn-info btn-sm btn3d col-md-3" value="read">Read</button>
                                           </div>
                                         </div>`);
 
@@ -36,8 +36,9 @@ $.get("/api/stories", function(data) {
       window.location.href = window.location.href + "/edit/" + event.target.id;
     }));
 
+
     $("#readScript-" + data[i].id).bind('click', {id: data[i].id}, (function(event) {
-      window.location.href = window.location.href + event.target.id;
+      window.location.href = window.location.href + "/readScript/" + event.target["data-id"];
     }));
 
   }
