@@ -34,5 +34,9 @@ module.exports = function(app) {
   });
   app.get("/edit/:storyID", function(req, res) {
       res.sendFile(path.join(__dirname, "../public/edit.html"));
-    });
+  });
+  // TODO: Fix duplication
+  app.get("/join/edit/:storyID", function(req, res) {
+      res.sendFile(path.join(__dirname, "../public/edit.html"));
+  });
 };
