@@ -13,7 +13,8 @@ $(document).ready(function() {
     $.post("/api/stories", newPost, function() {
       // window.location.href = "/read";
       }).done(function(data){
-          console.log(data);
+          console.log(data)
+          // $.get(""));
         });
     });
 

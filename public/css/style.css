@@ -1,3 +1,11 @@
+.signupStyle {
+  height: 60vh;
+}
+
+.signupStyle img {
+  margin-left: 120px;
+}
+
 
 .mainContain {
   margin-top: 10px;
@@ -10,6 +18,17 @@
   margin-right: 26px;
   margin-top: 20px;
   font-size: 20px;
+}
+
+.getStart h5 {
+  color: #337ab7;
+}
+
+.getStart h4 {
+
+}
+.getStart img {
+  margin-bottom: 25px;
 }
 
 .menu p {
@@ -264,7 +283,7 @@ header {
 }
 textarea {
   resize: none;
-  height: 50vh;
+  height: 62vh;
 }
 
 #navbar-primary .navbar-nav a {
@@ -671,7 +690,7 @@ form_main {
     width: 100%;
 }
 .txt2[type="submit"] {
-    background: #242424 none repeat scroll 0 0;
+    background: #265c84 none repeat scroll 0 0;
     border: 1px solid #4f5c04;
     border-radius: 25px;
     color: #fff;
