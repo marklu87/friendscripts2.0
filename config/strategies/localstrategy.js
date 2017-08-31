@@ -104,10 +104,6 @@ module.exports = function(passport, authors) {
 
 
 		    function(req, email, password, done) {
-
-					console.log("TEST HERE NOW");
-
-
 		        var isValidPassword = function(userpass, password) {
 							console.log(userpass+" "+password);
 							// console.log("bcrypt: "+bCrypt(password, userpass));

@@ -1,3 +1,11 @@
+.signupStyle {
+  height: 60vh;
+}
+
+.signupStyle img {
+  margin-left: 120px;
+}
+
 
 .mainContain {
   margin-top: 10px;
@@ -17,7 +25,10 @@
 }
 
 .getStart h4 {
-  
+
+}
+.getStart img {
+  margin-bottom: 25px;
 }
 
 .menu p {

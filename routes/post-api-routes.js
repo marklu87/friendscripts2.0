@@ -14,7 +14,9 @@ module.exports = function(app) {
     // if (req.query.author_id) {
     //   query.AuthorId = req.query.author_id;
     // }
-    db.stories.findAll({}).then(function(result) {
+    db.stories.findAll({
+      include: [db.authors]
+    }).then(function(result) {
       res.json(result);
     });
   });
