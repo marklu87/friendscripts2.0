@@ -33,11 +33,11 @@ $.get("/api/stories", function(data) {
                                         </div>`);
 
     $("#joinScript-" + data[i].id).bind('click', {id: data[i].id}, (function(event) {
-      window.location.href = "http://localhost:8080/edit/" + event.target.id;
+      window.location.href = window.location.href + "/edit" + event.target.id;
     }));
 
     $("#readScript-" + data[i].id).bind('click', {id: data[i].id}, (function(event) {
-      window.location.href = "http://localhost:8080/" + event.target.id;
+      window.location.href = window.location.href + event.target.id;
     }));
 
   }
