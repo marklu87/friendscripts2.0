@@ -1,35 +1,23 @@
 {
     "development": {
-        "username": "lhili6p2nzbbije7",
-        "password": "ll02t8dq0079x21n",
-        "database": "lx236d69gf78mvs7",
-        "host": "ipobfcpvprjpmdo9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-        "dialect": "mysql",
-        "options": { "pool": {
-          "idle": 20000
-          }
-        }
+        "username": "masteruser",
+        "password": "masteruser",
+        "database": "friendscripts",
+        "host": "friendscripts.c1fdvtdqewtf.us-east-2.rds.amazonaws.com",
+        "dialect": "mysql"
     },
     "test": {
-        "username": "lhili6p2nzbbije7",
-        "password": "ll02t8dq0079x21n",
-        "database": "lx236d69gf78mvs7",
-        "host": "ipobfcpvprjpmdo9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-        "dialect": "mysql",
-        "pool": {
-          "maxConnections": 5,
-          "maxIdleTime": 60000
-        }
+      "username": "masteruser",
+      "password": "masteruser",
+      "database": "friendscripts",
+      "host": "friendscripts.c1fdvtdqewtf.us-east-2.rds.amazonaws.com",
+      "dialect": "mysql"
     },
     "production": {
-        "username": "lhili6p2nzbbije7",
-        "password": "ll02t8dq0079x21n",
-        "database": "lx236d69gf78mvs7",
-        "host": "ipobfcpvprjpmdo9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-        "dialect": "mysql",
-        "pool": {
-          "maxConnections": 5,
-          "maxIdleTime": 60000
-        }
+      "username": "masteruser",
+      "password": "masteruser",
+      "database": "friendscripts",
+      "host": "friendscripts.c1fdvtdqewtf.us-east-2.rds.amazonaws.com",
+      "dialect": "mysql"
     }
 }
