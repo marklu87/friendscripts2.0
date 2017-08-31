@@ -3,6 +3,8 @@ var path = require("path");
 var passport = require('passport');
  module.exports = function(app) {
 
+
+
 //sign up get route
 	app.get('/auth/signup', function(req, res, next) {
  		res.sendFile(path.join(__dirname, "../public/signUp.html"));
@@ -18,7 +20,8 @@ var passport = require('passport');
 
 //sign up post route
  	app.post("/auth/signup", passport.authenticate('local-signup', {
-        successRedirect: '/newStory',
+        successRedirect: '/newStory'
+        ,
         failureRedirect: '/auth/signup'
     }
     ));
@@ -30,4 +33,6 @@ var passport = require('passport');
     })
 
       );
+
+
  	};
