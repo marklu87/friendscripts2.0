@@ -6,10 +6,8 @@ module.exports = function(passport, authors) {
 	var LocalStrategy = require('passport-local').Strategy;
 	var db = require("../../models");
 	var passport = require('passport');
-
-		var bCrypt = require('bcrypt-nodejs');
-
-    var LocalStrategy = require('passport-local').Strategy;
+	var bCrypt = require('bcrypt-nodejs');
+	var LocalStrategy = require('passport-local').Strategy;
 
 
     passport.use('local-signup', new LocalStrategy(
@@ -62,7 +60,7 @@ module.exports = function(passport, authors) {
 
                             authorName: req.body.email,
 														userName: req.body.email,
-                            password: req.body.psw
+                            password: generateHash(req.body.psw)
                         };
 												console.log(data);
                     db.authors.create(data).then(function(newUser, created) {
@@ -106,35 +104,30 @@ module.exports = function(passport, authors) {
 
 
 		    function(req, email, password, done) {
-					console.log("trying to log in");
 
-		        var User = user;
+					console.log("TEST HERE NOW");
+
 
 		        var isValidPassword = function(userpass, password) {
-
+							console.log(userpass+" "+password);
+							// console.log("bcrypt: "+bCrypt(password, userpass));
 		            return bCrypt.compareSync(password, userpass);
 
 		        }
 
 		        db.authors.findOne({
 		            where: {
-		                email: email
+		                userName: email
 		            }
 		        }).then(function(user) {
-
+							console.log(user);
 		            if (!user) {
 
-		                return done(null, false, {
-		                    message: 'Email does not exist'
-		                });
-
+		                return done(null, false,  req.flash('loginMessage', 'No user found.'));
 		            }
-
 		            if (!isValidPassword(user.password, password)) {
 
-		                return done(null, false, {
-		                    message: 'Incorrect password.'
-		                });
+		                return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.'));
 
 		            }
 

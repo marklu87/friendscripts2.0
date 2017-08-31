@@ -46,11 +46,12 @@
 
 
           <h2 class="col-md-1">Login</h2>
-          <form class="col-md-4" method="post">
-            <input class="col-md-6" type="text" name="email" placeholder="Username" required="required" />
-            <input class="col-md-6" type="password" name="psw" placeholder="Password" required="required" />
+          <form class="col-md-8" action="/auth/signin" method="post">
+            <input class="col-md-4" type="text" name="email" placeholder="emiail" required="required" />
+            <input class="col-md-4" type="password" name="psw" placeholder="Password" required="required" />
+            <button type="submit" class=" btn btn-primary btn-block btn-large col-md-4">Let me in.</button>
           </form>
-          <button type="submit" class=" btn btn-primary btn-block btn-large col-md-3">Let me in.</button>
+
         </div>
       </div>
     </div>

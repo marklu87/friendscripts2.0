@@ -1,40 +1,54 @@
 // *********************************************************************************
 // api-routes.js - this file offers a set of routes for displaying and saving data to the db
 // *********************************************************************************
-
 // Dependencies
 // =============================================================
-
 // Requiring our models
 var db = require("../models");
-
 // Routes
 // =============================================================
 module.exports = function(app) {
-
   // GET route for getting all of the posts
   app.get("/api/stories", function(req, res) {
     // var query = {};
     // if (req.query.author_id) {
     //   query.AuthorId = req.query.author_id;
     // }
-    db.stories.findAll({include: [db.authors]}).then(function(result) {
-
+    db.stories.findAll({}).then(function(result) {
       res.json(result);
     });
   });
-
-app.get("/api/sentences", function(req, res) {
-    // var query = {};
-    // if (req.query.author_id) {
-    //   query.AuthorId = req.query.author_id;
-    // }
-    db.stories.findOne({storyID: req.body.storyID}).then(function(result) {
+  app.get("/api/fullstory-:id", function(req, res) {
+    // console.log(req.params.id);
+    db.sentences.findAll({
+      where: {
+        storyId: req.params.id
+      },
+      include: [db.stories]
+    }).then(function(result) {
       res.json(result);
     });
   });
-
-
+  app.get("/api/firstsentence-:id", function(req, res) {
+    // console.log(req.params.id);
+    db.stories.findAll({
+      attributes: ['sentence'],
+      where: {
+        id: req.params.id
+      }
+    }).then(function(result) {
+      res.json(result);
+    });
+  });
+  app.get("/api/sentences", function(req, res) {
+      // var query = {};
+      // if (req.query.author_id) {
+      //   query.AuthorId = req.query.author_id;
+      // }
+      db.stories.findOne({storyID: req.body.storyId}).then(function(result) {
+        res.json(result);
+      });
+    });
   // Get rotue for retrieving a single post
   // app.get("/api/posts/:id", function(req, res) {
   //   db.Post.findOne({
@@ -46,32 +60,27 @@ app.get("/api/sentences", function(req, res) {
   //     res.json(dbPost);
   //   });
   // });
-
   // POST route for saving a new post
   app.post("/api/stories", function(req, res) {
-    // console.log(req.body.storyTitle);
+    console.log(req.body.storyTitle);
     // console.log(req.body.authorID);
     // console.log(req.body.sentence);
     db.stories.create({
-      // storyTitle: req.body.storyTitle,
+      storyTitle: req.body.storyTitle,
       authorId: 1,
       sentence: req.body.sentence
     }).then(function(result) {
       res.json(result);
     });
   });
-
-
   app.post("/api/sentences", function(req, res) {
     // console.log(req.body.storyTitle);
-    console.log(req.body.storyID);
+    console.log(req.body.storyId);
     console.log(req.body.sentence);
     db.sentences.create({
-
       sentence: req.body.sentence,
-      storyId: req.body.storyID,
+      storyId: req.body.storyId,
       authorId: 1
-
     }).then(function(result) {
       res.json(result);
     });
@@ -86,7 +95,6 @@ app.get("/api/sentences", function(req, res) {
   //     res.json(dbPost);
   //   });
   // });
-
   // PUT route for updating posts
   // app.put("/api/posts", function(req, res) {
   //   db.Post.update(
