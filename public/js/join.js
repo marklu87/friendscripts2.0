@@ -17,14 +17,20 @@ $.get("/api/stories", function(data) {
 $.get("/api/stories", function(data) {
   // console.log("stories data: " + data[1].id);
   for (var i = 0; i < data.length; i++) {
-    var storyDiv = $(`<div class="col-md-3 storyStyle">`);
+    var storyDiv = $(`<div class="col-sm-8 col-md-3 storyStyle">`);
     storyDiv.addClass("newStoryDiv");
     storyDiv.attr("id", "storyID-" + data[i].id)
     $(".title").append(storyDiv);
 
+<<<<<<< HEAD
     $("#storyID-" + data[i].id).append(`<h4 class="col-md-12">${data[i].authorID}</h4>`);
     $("#storyID-" + data[i].id).append(`<h3 class="col-md-12">Story Title: ${data[i].storyTitle}</h3>`);
     $("#storyID-" + data[i].id).append(`<p col-md-8 col-md-offset-2>${data[i].sentence}</p> <br>`);
+=======
+    $("#storyID-" + data[i].id).append(`<h4 class="col-sm-12 col-md-12">${data[i].authorID}</h4>`);
+    $("#storyID-" + data[i].id).append(`<h3 class="col-sm-12 col-md-12">Story ID: ${data[i].storyTitle}</h3>`);
+    $("#storyID-" + data[i].id).append(`<p col-sm-8 col-md-8 col-md-offset-2>${data[i].sentence}</p> <br>`);
+>>>>>>> 6b6af0df4fae8b362ba55a77217e517d6926fad6
     $("#storyID-" + data[i].id).append(`<div class="row">
                                           <div class="buttStyle col-md-10 col-md-offset-1">
                                             <button id="joinScript-${data[i].id}" type="button" class=" btn btn-primary btn-sm btn3d col-md-3" value="join">Join</button>
