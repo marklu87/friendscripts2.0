@@ -24,9 +24,11 @@ $.get("/api/stories", function(data) {
     storyDiv.attr("id", "storyID-" + data[i].id)
     $(".title").append(storyDiv);
 
+
     $("#storyID-" + data[i].id).append(`<h4 class="col-sm-12 col-md-12">${data[i].author.authorName}</h4>`);
     $("#storyID-" + data[i].id).append(`<h3 class="col-sm-12 col-md-12">Story ID: ${data[i].storyTitle}</h3>`);
     $("#storyID-" + data[i].id).append(`<p col-sm-8 col-md-8 col-md-offset-2>${data[i].sentence}</p> <br>`);
+
     $("#storyID-" + data[i].id).append(`<div class="row">
                                           <div class="buttStyle col-md-10 col-md-offset-1">
                                             <button id="joinScript-${data[i].id}" type="button" class=" btn btn-primary btn-sm btn3d col-md-3" value="join">Join</button>
@@ -35,11 +37,11 @@ $.get("/api/stories", function(data) {
                                         </div>`);
 
     $("#joinScript-" + data[i].id).bind('click', {id: data[i].id}, (function(event) {
-      window.location.href = "http://localhost:8080/edit/" + event.target.id;
+      window.location.href = window.location.href + "/edit/" + event.target.id;
     }));
 
     $("#readScript-" + data[i].id).bind('click', {id: data[i].id}, (function(event) {
-      window.location.href = "http://localhost:8080/" + event.target.id;
+      window.location.href = window.location.href + event.target.id;
     }));
 
   }
