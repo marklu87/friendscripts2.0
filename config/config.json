@@ -1,23 +1,23 @@
 {
     "development": {
-        "username": "root",
-        "password": "",
+        "username": "masteruse",
+        "password": "masteruser",
         "database": "friendscripts",
-        "host": "127.0.0.1",
+        "host": "friendscripts.c1fdvtdqewtf.us-east-2.rds.amazonaws.com",
         "dialect": "mysql"
     },
     "test": {
-      "username": "root",
-      "password": "",
+      "username": "masteruse",
+      "password": "masteruser",
       "database": "friendscripts",
-      "host": "127.0.0.1",
+      "host": "friendscripts.c1fdvtdqewtf.us-east-2.rds.amazonaws.com",
       "dialect": "mysql"
     },
     "production": {
-      "username": "root",
-      "password": "",
+      "username": "masteruse",
+      "password": "masteruser",
       "database": "friendscripts",
-      "host": "127.0.0.1",
+      "host": "friendscripts.c1fdvtdqewtf.us-east-2.rds.amazonaws.com",
       "dialect": "mysql"
     }
 }
