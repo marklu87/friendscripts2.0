@@ -9,15 +9,15 @@ $.get("/api/firstsentence-" + trimStoryID, function(data) {
       console.log(data[i].sentence)
       $("#readStoryText").append(data[i].sentence + " ");
     }
-  });
-
-$.get("/api/fullstory-" + trimStoryID, function(data) {
-  // console.log("fullstory data: " + data[1].sentence);
-  for(var i = 0; i < data.length; i++){
-    console.log("sentences: " + data[i].sentence);
-    $("#readStoryText").append(data[i].sentence + " ");
-  }
-})
+  }).then(function(){
+      $.get("/api/fullstory-" + trimStoryID, function(data) {
+        // console.log("fullstory data: " + data[1].sentence);
+        for(var i = 0; i < data.length; i++){
+          console.log("sentences: " + data[i].sentence);
+          $("#readStoryText").append(data[i].sentence + " ");
+        }
+      })
+  })
 
 $.get("/api/stories", function(data) {
     // console.log("stories data: " + data[1].id);
@@ -42,8 +42,12 @@ $.get("/api/stories", function(data) {
           $("#storyID-" + data[i].id).append(`<button id="joinScript-${data[i].id}" type="button" class="btn btn-primary btn-sm btn3d col-md-4" value="join">Join</button>`);
           $("#storyID-" + data[i].id).append(`<button id="readScript-${data[i].id}" type="button" class="btn btn-info btn-sm btn3d col-md-4" value="read">Read</button>`);
           // $("#storyID-" + data[i].id).append(`<div class="row"></div>`);
-          $("#storyID-" + data[i].id).bind('click', {id: data[i].id}, (function(event) {
-            window.location.href = "http://localhost:8080/edit/" + event.target.id;
+          $("#joinScript-" + data[i].id).on('click', {id: data[i].id}, (function(event) {
+            window.location.href =  "/edit/" + event.target.id;
+          }));
+
+          $("#readScript-" + data[i].id).on('click', {id: data[i].id}, (function(event) {
+            window.location.href = "/join/" + event.target.id;
           }));
       }
 

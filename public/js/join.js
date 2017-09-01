@@ -45,6 +45,8 @@ $.get("/api/stories", function(data) {
       window.location.href = window.location.href + "/" + event.target.id;
     }));
 
+
+
   }
 });
 
