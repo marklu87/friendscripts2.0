@@ -685,3 +685,8 @@ form_main {
 	color: #5793ef;
 	transition: all 0.5s ease 0s;
 }
+
+#alreadyHaveAccount {
+	margin-top: 15px;
+	margin-left: 220px;
+}
